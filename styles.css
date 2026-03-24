@@ -1,6 +1,29 @@
-body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); }
-        .gradient-text { background: linear-gradient(135deg, #4b5563, #1f2937); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .fade-in { animation: fadeIn 1s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #ffffff;
+            color: #0a0a0a;
+        }
+        .kerning-tight { letter-spacing: -0.05em; }
+        .kerning-wide { letter-spacing: 0.2em; }
+        .gold-accent { color: #c9a84c; }
+        .gold-border { border-color: #c9a84c; }
+        .gold-bg { background-color: #c9a84c; }
+        
+        section {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+
+        .fade-up {
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .line-reveal {
+            position: relative;
+            overflow: hidden;
+        }
