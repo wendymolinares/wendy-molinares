@@ -19,7 +19,8 @@
 <link rel="canonical" href="https://wendymolinares.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap"></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebSite","@id":"https://wendymolinares.com/#website","url":"https://wendymolinares.com","name":"Wendy Molinares","inLanguage":["es","en"]},
@@ -33,7 +34,7 @@
  "hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"degree","name":"Maestría en Ética en Inteligencia Artificial"},
  "award":["G.E.N.E.I.U.S. of the Year 2024","Women in AI list 2024","4° lugar, presentación oral, MICAI 2025 International Workshops","3° lugar, competencia de pósters, MICAI 2025"],
  "identifier":{"@type":"PropertyValue","propertyID":"ORCID","value":"0009-0009-5931-8228"},
- "sameAs":["https://orcid.org/0009-0009-5931-8228","https://www.linkedin.com/in/wendymolinares","https://instagram.com/molinares.wendy"]},
+ "sameAs":["https://orcid.org/0009-0009-5931-8228","https://scholar.google.com/citations?user=GpR3_lUAAAAJ","https://www.linkedin.com/in/wendymolinares","https://instagram.com/molinares.wendy"]},
 {"@type":"ScholarlyArticle","@id":"https://doi.org/10.1007/978-3-032-17930-2_28","headline":"Artificial Empathy in Conversational Agents","datePublished":"2026",
  "author":[{"@id":"https://wendymolinares.com/#wendy"}],
  "isPartOf":{"@type":"Book","name":"Advances in Computational Intelligence. MICAI 2025 International Workshops","bookEdition":"Lecture Notes in Computer Science, vol. 16264"},
@@ -397,6 +398,7 @@
   <p class="note" data-es='Quiero que cualquier persona pueda leer este sitio. Si algo no te funciona, escríbeme a <a href="mailto:info@wendymolinares.com">info@wendymolinares.com</a> y lo corrijo.' data-en='I want anyone to be able to read this site. If something doesn’t work for you, write to <a href="mailto:info@wendymolinares.com">info@wendymolinares.com</a> and I’ll fix it.'>Quiero que cualquier persona pueda leer este sitio. Si algo no te funciona, escríbeme a <a href="mailto:info@wendymolinares.com">info@wendymolinares.com</a> y lo corrijo.</p>
 </div>
 
+<main id="main">
 <header class="hero" id="top" data-nav="dark">
   <div class="aurora" aria-hidden="true"></div>
   <div class="wrap">
@@ -473,7 +475,7 @@
         <div class="pub"><b>Designed to Obey: How Female AI Assistants Reinforce Gender Roles</b><span data-es="Póster, MICAI 2025 · 3° lugar" data-en="Poster, MICAI 2025 · 3rd place">Póster, MICAI 2025 · 3° lugar</span></div>
         <div class="pub"><b data-es="Alfabetización funcional en IA y cultura de la legalidad" data-en="Functional AI literacy and the culture of lawfulness">Alfabetización funcional en IA y cultura de la legalidad</b><span data-es="Revista ÍNTEGRUS · en evaluación editorial" data-en="ÍNTEGRUS · under review">Revista ÍNTEGRUS · en evaluación editorial</span></div>
       </div>
-      <a class="orcid" href="https://orcid.org/0009-0009-5931-8228" target="_blank" rel="noopener" data-es="Registro académico completo en ORCID ↗" data-en="Full academic record on ORCID ↗">Registro académico completo en ORCID ↗</a>
+      <a class="orcid" href="https://orcid.org/0009-0009-5931-8228" target="_blank" rel="noopener" data-es="Registro académico completo en ORCID ↗" data-en="Full academic record on ORCID ↗">Registro académico completo en ORCID ↗</a><br><a class="orcid" href="https://scholar.google.com/citations?user=GpR3_lUAAAAJ" target="_blank" rel="noopener" data-es="Perfil en Google Scholar ↗" data-en="Google Scholar profile ↗">Perfil en Google Scholar ↗</a>
     </div>
   </div>
 </section>
@@ -544,6 +546,8 @@
     <span class="mail">info@wendymolinares.com</span>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap foot">
@@ -706,7 +710,7 @@
 
   /* start */
   var saved = null; try { saved = localStorage.getItem('wm-lang'); } catch(e){}
-  var start = saved || ((navigator.language || 'es').toLowerCase().indexOf('en') === 0 ? 'en' : 'es');
+  var start = saved || 'es';
   if (start === 'en') setLang('en'); else frame();
 })();
 </script>
