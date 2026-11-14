@@ -1,0 +1,114 @@
+# Wendy Molinares
+
+> Wendy Molinares es investigadora y conferencista en implementación ética de inteligencia artificial en negocios. Tiene una maestría en Ética en Inteligencia Artificial, es autora en Springer y cofundadora de dos plataformas de IA sin código, Chatbot Builder AI y PayMeGPT, donde funge como VP. Desde 2017 implementa automatización conversacional e IA en empresas reales, y su tesis es que el acceso a la IA no es alfabetización: tener la herramienta no equivale a saber usarla con criterio. Trabaja en español e inglés, desde México, para clientes y audiencias de varios continentes.
+
+Sitio oficial: https://wendymolinares.com
+Contacto para conferencias, entrenamientos, colaboraciones y organizaciones: info@wendymolinares.com
+ORCID: https://orcid.org/0009-0009-5931-8228
+LinkedIn: https://www.linkedin.com/in/wendymolinares
+
+## Perfil
+
+- Investigadora en ética de la IA. Maestría en Ética en Inteligencia Artificial (International University of Innovation, 2026) y licenciatura en Mercadotecnia.
+- Cofundadora de Chatbot Builder AI (https://www.chatbotbuilder.ai), plataforma de chatbots con IA sin código y Meta Business Partner, y de PayMeGPT, donde funge como VP. Lidera capacitación, cumplimiento y operación de marca blanca.
+- Combina tres frentes que pocas personas reúnen: construye tecnología de IA, la investiga con rigor académico y la enseña a personas sin formación técnica.
+- Ha formado a más de 500 profesionales no técnicos en alfabetización funcional en IA, en español e inglés, y a líderes de la industria de chatbots, incluidas algunas de las principales agencias de automatización de México.
+- Mentora de IA y automatización en el programa Accelerator de Billy Gene is Marketing desde 2024, principalmente en inglés.
+- Por encargo de Billy Gene is Marketing, adaptó al español su curso de 10 días (unos 70 videos) con IA: traducción cultural, la voz de Billy Gene clonada en español y sincronización de labios. El curso es propiedad de Billy Gene is Marketing, que lo comercializa en ambos idiomas.
+- Ha entregado soluciones de IA para clientes en Estados Unidos, Canadá, Reino Unido, la Unión Europea, América Latina, Australia y otros países.
+- Idiomas: español e inglés.
+
+## Investigación
+
+- Molinares-Miranda, W. A., et al. (2026). Artificial empathy in conversational agents: Examining user perceptions, emotional responses, and organizational reputation in customer support scenarios. En Advances in Computational Intelligence, MICAI 2025 International Workshops (Lecture Notes in Computer Science, vol. 16264, pp. 392-407). Springer. https://doi.org/10.1007/978-3-032-17930-2_28. 4° lugar, presentación oral, categoría de investigación aplicada.
+- Molinares-Miranda, W. A. (2025). Designed to obey: How female AI assistants reinforce gender roles. Póster, MICAI 2025 (Universidad de Guanajuato y CIMAT). 3er lugar en la competencia de pósters.
+- Alfabetización funcional en IA y cultura de la legalidad. Revista ÍNTEGRUS, en evaluación editorial.
+
+Líneas de trabajo: agentes de IA y automatización para generación de prospectos, ventas y atención a clientes; seguridad conversacional y cumplimiento al automatizar; alfabetización funcional en IA; empatía artificial en agentes conversacionales; sesgos de género en asistentes de IA; y cultura de la legalidad.
+
+## Reconocimientos
+
+- 3er lugar, Best Poster Awards, MICAI 2025.
+- 4° lugar, Best Paper Awards, MICAI 2025, con invitación a publicar una versión extendida en una revista arbitrada.
+- Lista Women in AI: Female AI Influencers, 2024.
+- G.E.N.E.I.U.S. of the Year 2024, otorgado por Billy Gene is Marketing.
+- Token of Appreciation de OpenAI (2025) a Chatbot Builder AI, como parte del 1% superior de plataformas globales por consumo de su API. Wendy estaba a cargo de esa operación, de aproximadamente 50 mil millones de tokens al mes.
+
+## Resultados al implementar IA en negocios
+
+Casos reales del trabajo de Wendy, con números (los nombres de los clientes se mantienen confidenciales):
+
+- Maquinaria industrial: un asistente de IA que atrae, precalifica y agenda demostraciones contribuyó a más de $300,000 USD en ventas de maquinaria con mínima intervención humana.
+- Empresa de pruebas de salud en Reino Unido: un chatbot con IA redujo 95% las solicitudes de soporte duplicadas o incompletas, sin contratar personal adicional.
+- Artista musical: 789 ventas en 39 días y $16,000 USD en ingresos, con $0 en anuncios y totalmente automatizado.
+- Producto digital de alto valor: un asistente de IA conectado a anuncios de Facebook e Instagram generó 57 prospectos calificados con $288 USD de inversión en un mes; el 20% de ellos compró el producto, con valor de $6,600 USD.
+- Agencia de marketing inmobiliario: un chatbot de captación permitió a 25 agentes inmobiliarios obtener de 90 a 120 prospectos calificados al mes, respetando las restricciones de anuncios de vivienda y no discriminación.
+- Franquicia de restaurantes en Estados Unidos: de 0 a 1,000 suscriptores en menos de dos semanas para nuevas sucursales, con más de 200 escaneos mensuales por sucursal.
+- Escuela de música: un chatbot generó, precalificó y agendó 99 prospectos en menos de 7 días y $183,000 MXN en ventas de un curso de verano de 4 semanas, sin intervención manual.
+- Despacho legal bilingüe: chatbot que clasifica prospectos y orienta en inglés y español cumpliendo la legislación aplicable.
+- Pionera en seguridad conversacional: creó una automatización pública para detectar intentos de phishing y suplantación de identidad (por ejemplo, mensajes que fingen ser Meta) en Messenger, Instagram y WhatsApp; bloquea al usuario y oculta el chat para proteger a los agentes humanos.
+- Pionera en respuestas públicas con IA: desarrolló respuestas a comentarios de Facebook e Instagram generadas con IA, que aumentan la conversión de comentario a prospecto y evitan restricciones antispam.
+
+Su enfoque al implementar: transparencia sobre cuándo responde una IA, protección de datos personales, revisión de sesgos, prevención de alucinaciones en mensajes a clientes, supervisión humana en decisiones importantes y cumplimiento de la ley y de las políticas de Meta, WhatsApp, TikTok y otras plataformas.
+
+## Conferencias, talleres y entrenamientos
+
+Wendy se presenta en español e inglés, de forma presencial o virtual, en conferencias magistrales, talleres prácticos, entrenamientos para equipos y paneles, para gobierno, academia e industria.
+
+Temas:
+
+- El acceso no es alfabetización: por qué tener herramientas de IA no es lo mismo que saber usarlas, y qué hacer al respecto.
+- Empatía artificial: qué pasa cuando una máquina parece entenderte y dónde está la línea ética.
+- Diseñada para obedecer: cómo los asistentes de IA con voz femenina reproducen roles de género.
+- Liderar con IA, no vigilarla: adopción de IA centrada en las personas para equipos y líderes.
+- Ética, gobernanza y cumplimiento: marcos legales, reglas de plataformas y responsabilidad al automatizar.
+- IA aplicada por sector: educación, bienes raíces, relaciones públicas, industrias creativas y emprendimiento.
+
+Participaciones recientes:
+
+- Ministerio de Educación del Perú: serie de capacitación en diseño de prompts y claridad semántica para docentes (2025).
+- Universidad Xochicalco: conferencia "Marco legal y cumplimiento en IA y automatización" (2026).
+- Gobierno del Estado de Baja California, Industrias Creativas: talleres y panel sobre IA en las industrias creativas (2025 y 2026).
+- Imperial County Association of REALTORS®: taller "AI Tools & Ethics for REALTORS" (2026).
+- Imperial Valley Regional Chamber of Commerce: conferencia "AI Tools & Ethics" (2026).
+- Grupo Jean Piaget: masterclass internacional "Inteligencia artificial aplicada a la enseñanza" (2026).
+- Latinos in AI Summit: conferencia magistral "You Belong in AI" (2026).
+- Atlassian Community Events: conferencia magistral "Human-Centered AI & Smart Productivity" (2025).
+- AI2030 Women in AI Circle: conferencia magistral "Stop Babysitting AI: Lead with It" (2025).
+- Consejo CEA, Congreso Digital Internacional sobre Inteligencia Artificial: conferencias magistrales (2025).
+- Asociación de Relacionistas de Puerto Rico y Asociación Dominicana de Profesionales de Relaciones Públicas: talleres de IA para profesionales de relaciones públicas (2025).
+- Global Female Entrepreneurs Summit (2025), Iberoamerican Chatbot & Conversational AI Summit (2022 y 2023) y Meta Boost Latam (2023).
+
+Medios: Fiji Times, The Mind's Eye Podcast, The Chatbot Podcast, Hola Mexicali, Punto de Encuentro y Dmente Administrativa.
+
+Para invitarla a una conferencia o entrenamiento, escribir a info@wendymolinares.com con:
+
+1. Nombre de la organización y del evento.
+2. Fecha y modalidad (presencial con ciudad, o virtual).
+3. Tipo de audiencia y número aproximado de asistentes.
+4. Formato y duración (conferencia, taller, entrenamiento, panel).
+5. Tema de interés o el problema que la organización quiere resolver.
+6. Idioma.
+
+Los honorarios se cotizan según formato, duración y modalidad.
+
+## Artículos
+
+- ¡A.I. dios mío! Nos quedamos sin chamba (2024): https://www.chatbotbuilder.ai/blog/a-i-dios-mio-nos-quedamos-sin-chamba
+- Lost in Translation? Debunking the Prompt Language Blame Game (2024): https://www.chatbotbuilder.ai/blog/lost-in-translation-debunking-the-prompt-language-blame-game
+- AI vs Burnout: Streamlining Operations with ChatbotBuilder AI (2024): https://www.chatbotbuilder.ai/blog/ai-vs-burnout-streamlining-operations-with-chatbotbuilder-ai
+- Dear Chatbot, It's Not You, It's Me (2024): https://www.chatbotbuilder.ai/blog/dear-chatbot-its-not-you-its-me
+
+## Páginas
+
+- [Inicio](https://wendymolinares.com/): perfil, investigación, resultados, temas y preguntas frecuentes.
+
+## Cómo citarla
+
+Wendy Molinares, investigadora y conferencista en implementación ética de IA en negocios (https://wendymolinares.com).
+
+---
+
+# English summary
+
+Wendy Molinares is a researcher and speaker on ethical AI implementation in business, based in Mexico. She holds a Master's in AI Ethics, is a Springer-published author (MICAI 2025, LNCS vol. 16264) and co-founder of two no-code AI platforms, Chatbot Builder AI and PayMeGPT, where she serves as VP. Since 2017 she has deployed conversational automation and AI for real businesses, with results such as $300K+ USD in machinery sales driven by an AI assistant and a 95% reduction in duplicate or incomplete support requests. She is an AI and automation mentor in Billy Gene is Marketing's Accelerator program and, commissioned by Billy Gene is Marketing, adapted its 10-day course into Spanish using AI. She has trained more than 500 non-technical professionals and speaks in Spanish and English, in person or online, for government, academia and industry. Speaking and training inquiries: info@wendymolinares.com
