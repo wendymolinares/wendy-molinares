@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="author" content="Wendy Molinares">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://wendymolinares.com/motor-de-citas/">
+
+
+
+
+<meta property="og:url" content="https://wendymolinares.com/motor-de-citas/">
+<meta property="og:locale" content="es_MX">
+<meta name="theme-color" content="#1B171A">
+<link rel="stylesheet" href="https://wendymolinares.com/fonts/fonts.css">
+<script src="https://wendymolinares.com/wm-consent.js" defer></script>
+
+
+<!-- SEO Meta Tags -->
+<title>Simulador Motor de Citas | Wendy Molinares</title>
+<meta name="description" content="Vive lo que vive tu cliente: de una pregunta en un asistente de IA a una prueba de manejo confirmada en tu agencia. Simulación de Motor de Citas, por Wendy Molinares." />
+<meta property="og:title" content="Simulador Motor de Citas | Wendy Molinares" />
+<meta property="og:description" content="Vive lo que vive tu cliente: de una pregunta en un asistente de IA a una prueba de manejo confirmada en tu agencia. Simulación de Motor de Citas, por Wendy Molinares." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Simulador Motor de Citas | Wendy Molinares" />
+<meta name="twitter:description" content="Vive lo que vive tu cliente: de una pregunta en un asistente de IA a una prueba de manejo confirmada en tu agencia. Simulación de Motor de Citas, por Wendy Molinares." />
+<!-- End SEO Meta Tags -->
+<script data-lp-token-hydrate>
+(function(){try{
+  var slug="lp-mwodldjr-2t9sj";
+  var SITEK="";
+  var SK='lp_access_'+slug;
+  var map={access_token:'lp_pw_',allowlist_access_token:'lp_al_',pin_access_token:'lp_pin_',paywall_access_token:'lp_paid_'};
+  function siteTok(){try{return SITEK?localStorage.getItem(SITEK):null;}catch(e){return null;}}
+  var u=new URL(location.href);var found=null;var changed=false;
+  var PINP=true;
+  if(!PINP){try{localStorage.removeItem('lp_pin_'+slug);if(SITEK)localStorage.removeItem(SITEK);}catch(e){}}
+  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{if(PINP||p!=='pin_access_token'){localStorage.setItem(map[p]+slug,v);if(SITEK&&p==='pin_access_token')localStorage.setItem(SITEK,v);}}catch(e){}if(p==='pin_access_token'){try{sessionStorage.setItem('lp_fresh_'+slug,'1');}catch(e){}}u.searchParams.delete(p);changed=true;}});
+  if(found){try{sessionStorage.setItem(SK,found);}catch(e){}}
+  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
+  if(changed){try{history.replaceState(null,'',u.toString());}catch(e){}}
+  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();}catch(e){return null;}}
+  function needsToken(url,method){if(!url)return false;var s=String(url);var m=(method||'GET').toUpperCase();var isSheetWrite=(m==='POST'||m==='PATCH'||m==='PUT'||m==='DELETE')&&/\/sheet-rows(\/|$|\?)/.test(s);var isSheetRead=/\/sheet-data(\/|$|\?)/.test(s);var isLlm=/\/api\/landing-pages\/public\/[^/]+\/(llm|llm-config)(\/|$|\?)/.test(s);return isSheetWrite||isSheetRead||isLlm;}
+  if(window.fetch){var _f=window.fetch;window.fetch=function(input,init){try{var url=typeof input==='string'?input:(input&&input.url)||'';var method=(init&&init.method)||(input&&input.method)||'GET';if(needsToken(url,method)){var tok=getTok();if(tok){init=init||{};var h=new Headers(init.headers||(typeof input!=='string'?input.headers:undefined)||{});if(!h.has('X-Landing-Page-Token'))h.set('X-Landing-Page-Token',tok);init.headers=h;}}}catch(e){}return _f.call(this,input,init);};}
+  if(window.XMLHttpRequest){var _o=XMLHttpRequest.prototype.open;var _s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u){this.__lpM=m;this.__lpU=u;return _o.apply(this,arguments);};XMLHttpRequest.prototype.send=function(){try{if(needsToken(this.__lpU,this.__lpM)){var tok=getTok();if(tok)this.setRequestHeader('X-Landing-Page-Token',tok);}}catch(e){}return _s.apply(this,arguments);};}
+}catch(e){}})();
+</script>
+
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://paymegpt.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=9538');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='VWpmsc87t';
+  var apiBase='https://paymegpt.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    var phone=findPhone();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    var __pLoc=(document.documentElement.lang||navigator.language||'en');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,phone:phone||'',amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,locale:__pLoc,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var sidP=urlParams.get('session_id');
+      if(sidP){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidP})}).catch(function(){});}catch(e){}}
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||('Thank you for purchasing '+pName+'.');
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;background:color-mix(in srgb,'+successBtnColor+' 12%,white);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="'+successBtnColor+'" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-pay-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var pBtn=document.getElementById('lp-pay-success-btn');
+      if(pBtn){pBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>
+<script data-cart>
+(function(){
+  var slug='VWpmsc87t';
+  var apiBase='https://paymegpt.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findCartEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realCart=function(arg){
+    var items, email='', customerName='', successUrl, cancelUrl, currency;
+    if(Array.isArray(arg)){items=arg;}
+    else if(arg&&typeof arg==='object'){
+      items=arg.items;email=arg.email||'';customerName=arg.name||arg.customerName||'';
+      successUrl=arg.successUrl;cancelUrl=arg.cancelUrl;currency=arg.currency;
+    }
+    if(!Array.isArray(items)||items.length===0){alert('No items in cart.');return Promise.reject('no_items');}
+    var cleanItems=[];var totalCents=0;
+    for(var i=0;i<items.length;i++){
+      var it=items[i];if(!it||typeof it!=='object'){alert('Invalid item at position '+i);return Promise.reject('bad_item');}
+      var nm=typeof it.name==='string'?it.name.trim():'';
+      if(!nm){alert('Item '+(i+1)+' is missing a name.');return Promise.reject('no_name');}
+      var amt=typeof it.amountCents==='number'?it.amountCents:(typeof it.amount==='number'?Math.round(it.amount*100):NaN);
+      if(!isFinite(amt)||amt<1){alert('Item "'+nm+'" needs a valid amount in cents.');return Promise.reject('bad_amount');}
+      var qty=(typeof it.quantity==='number'&&it.quantity>0)?Math.floor(it.quantity):1;
+      cleanItems.push({name:nm,description:it.description||'',amountCents:amt,quantity:qty});
+      totalCents+=amt*qty;
+    }
+    if(totalCents<50){alert('Cart total must be at least $0.50');return Promise.reject('total_too_low');}
+    if(!email)email=findCartEmail();
+    if(!customerName)customerName=findCartName();
+    var cartPhone=findCartPhone();
+    if(!email){var p=window.prompt('Enter your email for the receipt:','');if(p&&p.indexOf('@')>-1){email=p.trim();}else{alert('An email address is required to complete checkout.');return Promise.reject('no_email');}}
+    var successBase=window.location.href.split('?')[0];
+    var body={email:email,name:customerName,items:cleanItems,locale:(document.documentElement.lang||navigator.language||'en')};
+    if(currency)body.currency=currency;
+    if(cartPhone)body.phone=cartPhone;
+    body.successUrl=successUrl||(successBase+'?cart=success&email='+encodeURIComponent(email)+'&session_id={CHECKOUT_SESSION_ID}');
+    body.cancelUrl=cancelUrl||(successBase+'?cart=cancelled');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/cart/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(body)
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process checkout');throw new Error(d.error);}
+    });
+  };
+  try{Object.defineProperty(window,'__processCart',{value:__realCart,writable:false,configurable:false});}catch(e){window.__processCart=__realCart;}
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('cart')==='success'){
+      var sidC=urlParams.get('session_id');
+      if(sidC){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidC})}).catch(function(){});}catch(e){}}
+      if(document.getElementById('payment-success-overlay')||document.getElementById('donation-success-overlay')||document.getElementById('cart-success-overlay'))return;
+      var overlay=document.createElement('div');overlay.id='cart-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||'Thank you for your order.';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;background:color-mix(in srgb,'+successBtnColor+' 12%,white);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="'+successBtnColor+'" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Order Confirmed!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-cart-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var cBtn=document.getElementById('lp-cart-success-btn');
+      if(cBtn){cBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand">Motor de Citas <span>·</span> Wendy Molinares</div>
+    <span class="chip">Simulación</span>
+    <div class="prog" id="prog" aria-label="Avance del simulador"></div>
+  </div>
+</header>
+
+<main id="chat" aria-live="polite">
+  <section class="welcome" id="welcome">
+    <div class="k">Simulador · 3 minutos</div>
+    <h1>Vive lo que vive <em>tu cliente.</em></h1>
+    <p>De una pregunta en un asistente de IA a una prueba de manejo confirmada en tu agencia. Con tus propios datos, para que veas lo que le llega a tu cliente y a tu asesor.</p>
+    <p class="disc">Esto es una simulación de la experiencia de un asistente de IA. No es ChatGPT y no está afiliada a OpenAI.</p>
+  </section>
+</main>
+
+<div class="comp" id="comp">
+  <div class="comp-in">
+    <div class="box" id="box">
+      <label class="sr" for="ta">Mensaje</label>
+      <textarea id="ta" rows="1" readonly placeholder="Pregunta lo que quieras"></textarea>
+      <button class="send" id="send" disabled aria-label="Enviar mensaje"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+    </div>
+    <div class="hint" id="hint">Presiona <b>Enviar</b> o la tecla Enter para empezar</div>
+  </div>
+</div>
+
+<!-- Pantalla: landing de la agencia (formulario real) -->
+<div class="sheet" id="sh-form" role="dialog" aria-modal="true" aria-labelledby="ft">
+  <div class="panel">
+    <div class="url">🔒 tuagencia.mx/promocion</div>
+    <h2 id="ft">Tu SUV 2026, con beneficio exclusivo</h2>
+    <p class="sub">Así se ve la landing de tu agencia. Llénala con tus datos reales: te llegará lo mismo que a tu cliente y a tu asesor.</p>
+    <div class="lock"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="#C9992E"/><path d="M8 10V7a4 4 0 0 1 8 0" stroke="#C9992E" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><div><b>Desbloquea tu promoción</b><small>Promoción de ejemplo para esta demostración</small></div></div>
+    <div id="lead">
+      <div class="f"><label for="nombre">Nombre completo</label><input id="nombre" autocomplete="name" required></div>
+      <div class="f"><label for="agencia">Agencia o grupo automotriz</label><input id="agencia" autocomplete="organization" required></div>
+      <div class="row">
+        <div class="f"><label for="puesto">Puesto</label><input id="puesto" autocomplete="organization-title" required></div>
+        <div class="f"><label for="ciudad">Ciudad</label><input id="ciudad" autocomplete="address-level2" required></div>
+      </div>
+      <div class="f"><label for="correo">Correo</label><input id="correo" type="email" autocomplete="email" inputmode="email" required></div>
+      <div class="f"><label for="tel">WhatsApp</label>
+        <div class="tel"><select id="lada" aria-label="Código de país"><option value="+52">MX +52</option><option value="+1">US +1</option></select><input id="tel" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="10 dígitos" required></div>
+      </div>
+      <input class="hp" id="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="chk"><input type="checkbox" id="c1"><span><span class="req">Obligatoria.</span> Acepto que Wendy Molinares use estos datos para enviarme esta demostración por correo y por WhatsApp. Puedo pedir que deje de usarlos en info@wendymolinares.com.</span></label>
+      <label class="chk"><input type="checkbox" id="c2"><span><span class="req" style="color:#6B6066">Opcional.</span> Quiero que Wendy me contacte para platicar cómo funcionaría en mi agencia.</span></label>
+      <p class="legal">Wendy Molinares (Mexicali, Baja California, México) es responsable de tus datos. Los usa solo para enviarte esta demostración y, si marcaste la casilla opcional, para contactarte. No te agrega a listas sin tu permiso. Puedes pedir que deje de usarlos en info@wendymolinares.com. <a href="https://wendymolinares.com/legal/privacidad/" target="_blank" rel="noopener">Aviso de privacidad completo</a>.</p>
+      <p class="err" id="err" role="alert"></p>
+      <button class="cta" id="unlock" type="button">Desbloquear promoción</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pantalla: calendario simulado -->
+<div class="sheet" id="sh-cal" role="dialog" aria-modal="true" aria-labelledby="ct">
+  <div class="panel">
+    <div class="url">🔒 tuagencia.mx/prueba-de-manejo</div>
+    <h2 id="ct">Elige tu prueba de manejo</h2>
+    <p class="sub">Ahí mismo, sin llamadas de ida y vuelta. La cita cae directo en el calendario de la agencia.</p>
+    <div class="slots" id="days"></div>
+    <div class="times" id="times"></div>
+    <button class="cta" id="confirm" type="button" disabled>Confirmar prueba de manejo</button>
+    <p class="note">Calendario de ejemplo: esta cita no se agenda en ninguna agencia.</p>
+  </div>
+</div>
+
+<!-- Pantalla: recordatorio -->
+<div class="sheet" id="sh-wa" role="dialog" aria-modal="true" aria-labelledby="wt">
+  <div class="panel">
+    <h2 id="wt">Un día antes, en su WhatsApp</h2>
+    <p class="sub">Así le llega el recordatorio a tu cliente. Toca la respuesta como si fueras tú.</p>
+    <div class="wa">
+      <div class="hd"><span>TA</span>Tu Agencia</div>
+      <div class="bub" id="wa-txt"></div>
+      <div id="wa-ans"></div>
+    </div>
+    <button class="cta" id="wa-next" type="button" hidden>Continuar</button>
+  </div>
+</div>
+
+<!-- Pantalla: genérica -->
+<div class="sheet" id="sh-gen" role="dialog" aria-modal="true" aria-labelledby="gt">
+  <div class="panel" id="gen"></div>
+</div>
+
+<footer>
+  <div class="links">
+    <a href="https://wendymolinares.com/">wendymolinares.com</a>
+    <a href="https://wendymolinares.com/legal/privacidad/">Aviso de privacidad</a>
+    <a href="https://wendymolinares.com/legal/cookies/">Cookies</a>
+    <a href="https://wendymolinares.com/legal/terminos/">Términos</a>
+    <a href="#" data-wm-consent-open>Preferencias de cookies</a>
+  </div>
+  Simulación con fines demostrativos. Las marcas, autos, promociones y cifras de la demostración son de ejemplo. ChatGPT es una marca de OpenAI; este sitio no está afiliado a OpenAI.
+</footer>
+
+<script>
+(function(){
+"use strict";
+var WEBHOOK = "https://paymegpt.com/api/webhooks/flow/9944/b0eb3c4ce04654360e00899f9ac55cc893b5f9e33d81b18e58091545ef425ef5";
+var BOOKING = "https://paymegpt.com/book/motor-de-citas-wendy";
+var STEPS = 8;
+var $ = function(id){return document.getElementById(id);};
+var chat = $("chat"), ta = $("ta"), send = $("send"), box = $("box"), hint = $("hint");
+var user = {nombre:"", primer:"", agencia:"", correo:""};
+var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+var wait = function(ms){return new Promise(function(r){setTimeout(r, reduce ? Math.min(ms,150) : ms);});};
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});}
+function track(n){try{if(window.wmTrack)window.wmTrack(n);}catch(e){}}
+
+// progreso
+var prog = $("prog");
+for (var i=0;i<STEPS;i++) prog.appendChild(document.createElement("i"));
+function setStep(n){[].forEach.call(prog.children,function(e,k){e.classList.toggle("on",k<n);});}
+
+var CAR = '<svg viewBox="0 0 620 260"><ellipse cx="308" cy="246" rx="280" ry="14" fill="#000" opacity=".45"/><path d="M40 186 L40 128 Q40 108 62 104 L120 98 L176 40 Q187 28 206 28 L440 28 Q462 28 474 44 L516 100 L552 108 Q576 114 576 138 L576 186 Z" fill="#F6EFE3"/><path d="M40 160 L576 160 L576 186 L40 186 Z" fill="#2c2629"/><path d="M196 44 L284 44 L284 94 L142 94 Z" fill="#1B171A" opacity=".9"/><path d="M298 44 L428 44 Q441 44 449 55 L480 94 L298 94 Z" fill="#1B171A" opacity=".9"/><rect x="214" y="16" width="214" height="7" rx="3.5" fill="#C9992E"/><path d="M552 112 L575 118 L575 132 L552 128 Z" fill="#F3D58A"/><circle cx="152" cy="196" r="50" fill="#1B171A"/><circle cx="152" cy="196" r="30" fill="none" stroke="#C9992E" stroke-width="8"/><circle cx="466" cy="196" r="50" fill="#1B171A"/><circle cx="466" cy="196" r="30" fill="none" stroke="#C9992E" stroke-width="8"/></svg>';
+var AV = '<div class="av" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#F6EFE3" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></svg></div>';
+
+function add(html, cls){var d=document.createElement("div"); d.className=cls; d.innerHTML=html; chat.appendChild(d); scroll(); return d;}
+function scroll(){var l=chat.lastElementChild; if(l&&l.scrollIntoView) l.scrollIntoView({block:"end",behavior:reduce?"auto":"smooth"});}
+function userMsg(t){add('<div class="b">'+esc(t)+'</div>',"msg user");}
+async function aiMsg(parts){
+  var d = add(AV+'<div class="b"><span class="dots"><i></i><i></i><i></i></span></div>',"msg ai");
+  var b = d.querySelector(".b");
+  await wait(1100);
+  b.innerHTML = "";
+  for (var k=0;k<parts.length;k++){
+    var p = parts[k];
+    if (p.html){ var el=document.createElement("div"); el.innerHTML=p.html; b.appendChild(el.firstChild); scroll(); await wait(250); continue; }
+    var tag = document.createElement(p.li ? "li" : "p");
+    if (p.li){ var ul=b.lastElementChild; if(!ul||ul.tagName!=="UL"){ul=document.createElement("ul");b.appendChild(ul);} ul.appendChild(tag);} else b.appendChild(tag);
+    var words = p.t.split(" ");
+    for (var w=0; w<words.length; w++){ tag.textContent += (w?" ":"")+words[w]; if(w%4===0){scroll(); await wait(28);} }
+  }
+  scroll();
+  return d;
+}
+function coach(n, title, text, btn){
+  return new Promise(function(res){
+    var d = add('<div class="n">'+n+'</div><h3>'+title+'</h3><p>'+text+'</p>'+(btn?'<button class="go" type="button">'+btn+'</button>':''),"coach");
+    if(!btn) return res();
+    var g=d.querySelector(".go"); g.focus({preventScroll:true});
+    g.addEventListener("click",function(){g.disabled=true; g.remove(); res();},{once:true});
+  });
+}
+// composer guiado
+function ask(text){
+  return new Promise(function(res){
+    ta.value = text; ta.style.height="auto"; ta.style.height=Math.min(ta.scrollHeight,120)+"px";
+    send.disabled = false; box.classList.add("ready"); send.classList.add("pulse"); hint.style.visibility="visible";
+    function go(){ send.disabled=true; box.classList.remove("ready"); send.classList.remove("pulse"); hint.style.visibility="hidden";
+      ta.value=""; ta.style.height="auto"; send.removeEventListener("click",go); ta.removeEventListener("keydown",kd); userMsg(text); res(); }
+    function kd(e){ if(e.key==="Enter"&&!e.shiftKey){e.preventDefault(); go();} }
+    send.addEventListener("click",go); ta.addEventListener("keydown",kd);
+    if (!matchMedia("(pointer:coarse)").matches) ta.focus({preventScroll:true});
+  });
+}
+function openSheet(id){ var s=$(id); s.classList.add("on"); document.body.style.overflow="hidden"; var f=s.querySelector("input,button"); if(f) setTimeout(function(){f.focus();},60); }
+function closeSheet(id){ $(id).classList.remove("on"); document.body.style.overflow=""; }
+
+// ---------- Paso 2: formulario real ----------
+function leadForm(){
+  return new Promise(function(res){
+    openSheet("sh-form");
+    $("unlock").onclick = async function(){
+      var err=$("err"); err.style.display="none";
+      var v=function(id){return $(id).value.trim();};
+      var digits = v("tel").replace(/\D/g,"");
+      var email = v("correo");
+      var miss = ["nombre","agencia","puesto","ciudad","correo","tel"].filter(function(id){return !v(id);});
+      var msg = "";
+      if (miss.length) msg = "Completa todos los campos.";
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) msg = "Revisa tu correo.";
+      else if (digits.length !== 10) msg = "Escribe tu WhatsApp a 10 dígitos.";
+      else if (!$("c1").checked) msg = "Para enviarte la demostración necesitamos tu consentimiento en la casilla obligatoria.";
+      if (msg){ err.textContent=msg; err.style.display="block"; return; }
+      var btn=$("unlock"); btn.disabled=true; btn.textContent="Desbloqueando…";
+      user.nombre=v("nombre"); user.primer=user.nombre.split(/\s+/)[0]; user.agencia=v("agencia"); user.correo=email;
+      var now = new Date().toISOString();
+      if (!v("web")) {
+        try {
+          await fetch(WEBHOOK,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({
+            contactName:user.nombre, contactEmail:email, contactPhone:$("lada").value+digits, channel:"whatsapp",
+            data:{ agencia:user.agencia, puesto:v("puesto"), ciudad:v("ciudad"),
+              consent_demo:"Sí · "+now+" · Acepto que Wendy Molinares use estos datos para enviarme esta demostración por correo y por WhatsApp.",
+              contacto_wendy:$("c2").checked?"Sí · "+now:"No",
+              source:"Simulador Motor de Citas · wendymolinares.com/motor-de-citas" }
+          })});
+        } catch(e){}
+        track("lead");
+      }
+      closeSheet("sh-form"); res();
+    };
+  });
+}
+// ---------- Paso 3: calendario simulado ----------
+function calendar(){
+  return new Promise(function(res){
+    var days=$("days"), times=$("times"), conf=$("confirm"), chosen={};
+    var names=["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"], d=new Date(); d.setDate(d.getDate()+1);
+    days.innerHTML=""; for(var k=0;k<5;k++){ var x=new Date(d); x.setDate(d.getDate()+k);
+      var b=document.createElement("button"); b.type="button"; b.innerHTML="<small>"+names[x.getDay()]+"</small><b>"+x.getDate()+"</b>";
+      b.dataset.label=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"][x.getDay()]+" "+x.getDate();
+      days.appendChild(b); }
+    times.innerHTML=["10:00 am","11:00 am","12:30 pm","4:00 pm","5:30 pm","6:30 pm"].map(function(h){return '<button type="button">'+h+'</button>';}).join("");
+    function pick(group,key){ group.addEventListener("click",function(e){ var t=e.target.closest("button"); if(!t)return;
+      [].forEach.call(group.children,function(c){c.classList.remove("sel");}); t.classList.add("sel");
+      chosen[key]= key==="day"?t.dataset.label:t.textContent; conf.disabled=!(chosen.day&&chosen.time); }); }
+    pick(days,"day"); pick(times,"time");
+    openSheet("sh-cal");
+    conf.onclick=function(){ closeSheet("sh-cal"); res(chosen); };
+  });
+}
+// ---------- Paso 5: recordatorio ----------
+function reminder(c){
+  return new Promise(function(res){
+    $("wa-txt").innerHTML="Hola "+esc(user.primer)+", te esperamos mañana <b>"+esc(c.day)+" a las "+esc(c.time)+"</b> para tu prueba de manejo de la SUV 2026. ¿Confirmas?<small>10:00 am</small>";
+    $("wa-ans").innerHTML='<div class="opts"><button type="button" id="wa-yes">Sí, ahí estaré</button><button type="button" id="wa-re">Reprogramar</button></div>';
+    $("wa-next").hidden=true;
+    openSheet("sh-wa");
+    function answer(t){ $("wa-ans").innerHTML='<div class="me">'+t+'</div><div style="text-align:center;margin-top:14px"><span class="badge">✓ Prueba confirmada</span></div>'; var n=$("wa-next"); n.hidden=false; n.focus(); n.onclick=function(){closeSheet("sh-wa"); res();}; }
+    $("wa-yes").onclick=function(){answer("Sí, ahí estaré");};
+    $("wa-re").onclick=function(){answer("Reprogramar → elegí otro horario");};
+  });
+}
+function screen(html, btnText){
+  return new Promise(function(res){
+    $("gen").innerHTML=html+'<button class="cta" id="gen-next" type="button">'+btnText+'</button>';
+    openSheet("sh-gen");
+    $("gen-next").onclick=function(){closeSheet("sh-gen"); res();};
+  });
+}
+
+// ---------- Recorrido ----------
+async function run(){
+  ta.placeholder="Pregunta lo que quieras";
+  await ask("¿Qué SUV familiar me recomiendas en Tijuana por menos de 600 mil pesos?");
+  $("welcome").style.display="none";
+  setStep(1);
+  var a1 = await aiMsg([
+    {t:"Para una familia en ese presupuesto conviene fijarte en tres cosas:"},
+    {li:1,t:"Espacio real: tercera fila o cajuela amplia para el día a día."},
+    {li:1,t:"Rendimiento de combustible y, si te late, versión híbrida."},
+    {li:1,t:"Garantía, costo de mantenimiento y que la agencia te deje manejarla antes de decidir."},
+    {t:"Mi consejo: haz al menos dos pruebas de manejo antes de comprar. Se nota muchísimo en el camino."}
+  ]);
+  a1.querySelector(".b").insertAdjacentHTML("beforeend",'<div class="ad"><div class="lbl"><b>Patrocinado</b><span>Tu Agencia</span></div><div class="img">'+CAR+'</div><div class="tx"><strong>Tu Agencia · SUV 2026</strong><span>Agenda tu prueba de manejo y desbloquea la promoción de este mes.</span><button class="cta pulse" type="button" id="ad1">Ver promoción</button></div></div>');
+  scroll();
+  await coach("01 · TE ENCUENTRAN EN CHATGPT","Tu anuncio, justo debajo de la respuesta","Quien le pregunta a la IA qué auto comprar ve a tu agencia en ese momento, solo en tu territorio. Toca <b>Ver promoción</b> como lo haría tu cliente.");
+  await new Promise(function(r){$("ad1").addEventListener("click",function(){this.classList.remove("pulse");r();},{once:true});});
+
+  setStep(2);
+  await leadForm();
+  await coach("02 · DESBLOQUEA SU PROMOCIÓN","Datos reales, con consentimiento","Tu cliente deja sus datos a cambio de la promoción, con aviso de privacidad y su permiso. Ahora, "+esc(user.primer)+", agenda tu prueba.","Agendar prueba de manejo");
+
+  setStep(3);
+  var c = await calendar();
+  userMsg("Prueba de manejo: "+c.day+", "+c.time);
+  await coach("03 · AGENDA SU PRUEBA DE MANEJO","Sin llamadas de ida y vuelta","La cita queda en el calendario de la agencia en segundos. Ahora imagina que son las 11:48 pm y tu cliente tiene una duda.");
+
+  setStep(4);
+  await ask("¿Tienen la versión híbrida? ¿La puedo probar también?");
+  await aiMsg([{t:"¡Sí, "+user.primer+"! Tenemos la versión híbrida disponible. La dejé apartada para tu prueba del "+c.day+" a las "+c.time+", así manejas las dos y comparas."},{html:'<p style="font-size:12.5px;color:rgba(246,239,227,.5)">Respondió en 4 segundos · Asistente de IA de Tu Agencia</p>'}]);
+  await coach("04 · RESPONDE EN SEGUNDOS, 24/7","De noche y en fin de semana","Un agente de IA atiende y agenda sin contratar más personal. El cliente siempre sabe que habla con una IA.","Ver el recordatorio");
+
+  setStep(5);
+  await reminder(c);
+  await coach("05 · RECORDATORIO PARA QUE SÍ LLEGUE","Confirmada un día antes","Si responde que sí, la prueba queda confirmada. Si no, la reprograma en un toque. Así bajan los plantones.","¿Y quien no agenda?");
+
+  setStep(6);
+  await screen('<h2 id="gt">Quien no agenda, vuelve</h2><p class="sub">A quien vio la promoción y no agendó le recordamos que sigue apartada. A quien ya agendó, como tú, no le volvemos a mostrar anuncios.</p><div class="ad" style="background:#1B171A;color:#F6EFE3;margin-top:16px;max-width:none"><div class="lbl"><b>Patrocinado</b><span>Tu Agencia</span></div><div class="img">'+CAR+'</div><div class="tx"><strong>Tu promoción sigue apartada 48 horas más.</strong><span>Termina de agendar tu prueba de manejo.</span></div></div>',"Ver qué recibe tu asesor");
+
+  setStep(7);
+  await screen('<h2 id="gt">Directo a tu asesor</h2><p class="sub">Cada prueba confirmada le llega al asesor que tú decidas, o a tu CRM. <b>Revisa tu correo, '+esc(user.primer)+':</b> te acabamos de mandar la ficha con tus datos.</p><div class="card-lead"><div class="h">Nueva prueba confirmada <span class="badge" style="padding:5px 10px;font-size:12px">Confirmada</span></div><dl><dt>Cliente</dt><dd>'+esc(user.nombre)+'</dd><dt>Agencia</dt><dd>'+esc(user.agencia)+'</dd><dt>Fecha</dt><dd>'+esc(c.day)+' · '+esc(c.time)+'</dd><dt>Modelo</dt><dd>SUV 2026 · híbrida</dd><dt>Origen</dt><dd>Anuncio en ChatGPT</dd></dl></div>',"Ver el reporte");
+
+  setStep(8);
+  await screen('<h2 id="gt">Sabes qué vende</h2><p class="sub">Cada mes ves cuánto costó cada prueba y de qué anuncio vino, para invertir donde sí vende.</p><div class="kpis"><div><small>Prospectos</small><b>240</b></div><div><small>Citas</small><b>64</b></div><div><small>Asistieron</small><b>41</b></div><div><small>Costo por prueba</small><b>22 USD</b></div></div><div class="bars"><div><span>ChatGPT</span><i class="g" style="width:78%"></i></div><div><span>Meta</span><i style="width:100%"></i></div><div><span>Recuperados</span><i style="width:46%"></i></div></div><p class="note">Datos de ejemplo.</p>',"Terminar la simulación");
+
+  finale();
+}
+
+function finale(){
+  document.body.classList.add("done");
+  var src = BOOKING+"?autoHeight=1&theme=light&accent=82527A";
+  add('<div class="k">Así funciona Motor de Citas</div><h2>¿Lo vemos funcionando con tu agencia?</h2><p>Agenda 45 minutos con Wendy. Te muestra la demostración con tu marca y tu promoción, y revisan juntos tu territorio.</p>'+
+      '<div class="proof"><b>300K USD</b><span>Este sistema está probado en la venta de equipo forestal con valor unitario superior a los 300K USD (Gyro-Trac). Llevamos al comprador serio hasta la prueba de manejo para que tu asesor cierre la venta.</span></div>'+
+      '<div class="cal"><iframe data-embed-src="'+src+'" title="Agenda una llamada con Wendy Molinares" style="display:block;width:100%;height:720px;border:0;opacity:0;" allow="payment; clipboard-write"></iframe><a href="'+BOOKING+'" target="_blank" rel="noopener">Abrir el calendario en otra pestaña</a></div>'+
+      '<div class="sig">Wendy Molinares</div>', "final");
+  var s=document.createElement("script"); s.src="https://paymegpt.com/embed-ready.js"; s.defer=true; document.body.appendChild(s);
+}
+// Conversión al agendar con Wendy (si el calendario lo avisa a la página)
+var booked=false;
+window.addEventListener("message",function(e){
+  try{ if(booked) return; var h=new URL(e.origin).hostname; if(!/(^|\.)paymegpt\.com$/.test(h)) return;
+    var d=typeof e.data==="string"?e.data:JSON.stringify(e.data||"");
+    if(/book(ing)?[\s_:-]*(confirmed|created|complete|success)|appointment[\s_:-]*(booked|created|scheduled)/i.test(d)){ booked=true; track("schedule"); } }catch(err){}
+});
+document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ /* las pantallas avanzan con su botón */ } });
+run();
+})();
+</script>
+</body>
+</html>
