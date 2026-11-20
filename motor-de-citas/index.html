@@ -327,8 +327,9 @@
 <main id="chat" aria-live="polite">
   <section class="welcome" id="welcome">
     <div class="k">Simulador · 3 minutos</div>
-    <h1>Vive lo que vive <em>tu cliente.</em></h1>
-    <p>De una pregunta en un asistente de IA a una prueba de manejo confirmada en tu agencia. Con tus propios datos, para que veas lo que le llega a tu cliente y a tu asesor.</p>
+    <h1>Hoy eres <em>tu cliente.</em></h1>
+    <p>Vas a vivir lo que vive alguien que busca auto: le pregunta a la IA, ve el anuncio de tu agencia y termina con una prueba de manejo confirmada.</p>
+    <ol class="how"><li><b>1</b><span>Envía la pregunta que ya está escrita abajo.</span></li><li><b>2</b><span>Mira dónde aparece el anuncio de tu agencia.</span></li><li><b>3</b><span>Sigue los pasos con tus datos reales y revisa tu correo.</span></li></ol>
     <p class="disc">Esto es una simulación de la experiencia de un asistente de IA. No es ChatGPT y no está afiliada a OpenAI.</p>
   </section>
 </main>
@@ -338,15 +339,15 @@
     <div class="box" id="box">
       <label class="sr" for="ta">Mensaje</label>
       <textarea id="ta" rows="1" readonly placeholder="Pregunta lo que quieras"></textarea>
-      <button class="send" id="send" disabled aria-label="Enviar mensaje"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+      <span class="tap" id="tap" hidden>Toca aquí para enviar</span><button class="send" id="send" disabled aria-label="Enviar mensaje"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
     </div>
-    <div class="hint" id="hint">Presiona <b>Enviar</b> o la tecla Enter para empezar</div>
+    <div class="hint" id="hint">Toca la flecha <b>dorada</b> o presiona Enter</div>
   </div>
 </div>
 
 <!-- Pantalla: landing de la agencia (formulario real) -->
 <div class="sheet" id="sh-form" role="dialog" aria-modal="true" aria-labelledby="ft">
-  <div class="panel">
+  <div class="panel"><button class="x" type="button" aria-label="Cerrar">×</button>
     <div class="url">🔒 tuagencia.mx/promocion</div>
     <h2 id="ft">Tu SUV 2026, con beneficio exclusivo</h2>
     <p class="sub">Así se ve la landing de tu agencia. Llénala con tus datos reales: te llegará lo mismo que a tu cliente y a tu asesor.</p>
@@ -374,7 +375,7 @@
 
 <!-- Pantalla: calendario simulado -->
 <div class="sheet" id="sh-cal" role="dialog" aria-modal="true" aria-labelledby="ct">
-  <div class="panel">
+  <div class="panel"><button class="x" type="button" aria-label="Cerrar">×</button>
     <div class="url">🔒 tuagencia.mx/prueba-de-manejo</div>
     <h2 id="ct">Elige tu prueba de manejo</h2>
     <p class="sub">Ahí mismo, sin llamadas de ida y vuelta. La cita cae directo en el calendario de la agencia.</p>
@@ -387,7 +388,7 @@
 
 <!-- Pantalla: recordatorio -->
 <div class="sheet" id="sh-wa" role="dialog" aria-modal="true" aria-labelledby="wt">
-  <div class="panel">
+  <div class="panel"><button class="x" type="button" aria-label="Cerrar">×</button>
     <h2 id="wt">Un día antes, en su WhatsApp</h2>
     <p class="sub">Así le llega el recordatorio a tu cliente. Toca la respuesta como si fueras tú.</p>
     <div class="wa">
@@ -401,9 +402,10 @@
 
 <!-- Pantalla: genérica -->
 <div class="sheet" id="sh-gen" role="dialog" aria-modal="true" aria-labelledby="gt">
-  <div class="panel" id="gen"></div>
+  <div class="panel"><button class="x" type="button" aria-label="Cerrar">×</button><div id="gen"></div></div>
 </div>
 
+<button class="resume" id="resume" type="button" hidden>Continuar la simulación</button>
 <footer>
   <div class="links">
     <a href="https://wendymolinares.com/">wendymolinares.com</a>
@@ -443,7 +445,7 @@ function userMsg(t){add('<div class="b">'+esc(t)+'</div>',"msg user");}
 async function aiMsg(parts){
   var d = add(AV+'<div class="b"><span class="dots"><i></i><i></i><i></i></span></div>',"msg ai");
   var b = d.querySelector(".b");
-  await wait(1100);
+  await wait(1600);
   b.innerHTML = "";
   for (var k=0;k<parts.length;k++){
     var p = parts[k];
@@ -451,7 +453,8 @@ async function aiMsg(parts){
     var tag = document.createElement(p.li ? "li" : "p");
     if (p.li){ var ul=b.lastElementChild; if(!ul||ul.tagName!=="UL"){ul=document.createElement("ul");b.appendChild(ul);} ul.appendChild(tag);} else b.appendChild(tag);
     var words = p.t.split(" ");
-    for (var w=0; w<words.length; w++){ tag.textContent += (w?" ":"")+words[w]; if(w%4===0){scroll(); await wait(28);} }
+    for (var w=0; w<words.length; w++){ tag.textContent += (w?" ":"")+words[w]; if(w%3===0){scroll(); await wait(65);} }
+    await wait(220);
   }
   scroll();
   return d;
@@ -468,16 +471,20 @@ function coach(n, title, text, btn){
 function ask(text){
   return new Promise(function(res){
     ta.value = text; ta.style.height="auto"; ta.style.height=Math.min(ta.scrollHeight,120)+"px";
-    send.disabled = false; box.classList.add("ready"); send.classList.add("pulse"); hint.style.visibility="visible";
-    function go(){ send.disabled=true; box.classList.remove("ready"); send.classList.remove("pulse"); hint.style.visibility="hidden";
+    send.disabled = false; box.classList.add("ready"); send.classList.add("pulse"); hint.style.visibility="visible"; $("tap").hidden=false;
+    function go(){ send.disabled=true; box.classList.remove("ready"); send.classList.remove("pulse"); hint.style.visibility="hidden"; $("tap").hidden=true; document.body.classList.add("chatting");
       ta.value=""; ta.style.height="auto"; send.removeEventListener("click",go); ta.removeEventListener("keydown",kd); userMsg(text); res(); }
     function kd(e){ if(e.key==="Enter"&&!e.shiftKey){e.preventDefault(); go();} }
     send.addEventListener("click",go); ta.addEventListener("keydown",kd);
     if (!matchMedia("(pointer:coarse)").matches) ta.focus({preventScroll:true});
   });
 }
-function openSheet(id){ var s=$(id); s.classList.add("on"); document.body.style.overflow="hidden"; var f=s.querySelector("input,button"); if(f) setTimeout(function(){f.focus();},60); }
+var lastSheet=null;
+function openSheet(id){ lastSheet=id; $("resume").hidden=true; var s=$(id); s.classList.add("on"); document.body.style.overflow="hidden"; var f=s.querySelector("input,button"); if(f) setTimeout(function(){f.focus();},60); }
 function closeSheet(id){ $(id).classList.remove("on"); document.body.style.overflow=""; }
+function userClose(){ if(!lastSheet||!$(lastSheet).classList.contains("on")) return; closeSheet(lastSheet); $("resume").hidden=false; }
+document.addEventListener("click",function(e){ if(e.target.closest(".x")) userClose(); });
+$("resume").addEventListener("click",function(){ if(lastSheet) openSheet(lastSheet); });
 
 // ---------- Paso 2: formulario real ----------
 function leadForm(){
@@ -510,7 +517,7 @@ function leadForm(){
         } catch(e){}
         track("lead");
       }
-      closeSheet("sh-form"); res();
+      closeSheet("sh-form"); lastSheet=null; res();
     };
   });
 }
@@ -529,7 +536,7 @@ function calendar(){
       chosen[key]= key==="day"?t.dataset.label:t.textContent; conf.disabled=!(chosen.day&&chosen.time); }); }
     pick(days,"day"); pick(times,"time");
     openSheet("sh-cal");
-    conf.onclick=function(){ closeSheet("sh-cal"); res(chosen); };
+    conf.onclick=function(){ closeSheet("sh-cal"); lastSheet=null; res(chosen); };
   });
 }
 // ---------- Paso 5: recordatorio ----------
@@ -539,7 +546,7 @@ function reminder(c){
     $("wa-ans").innerHTML='<div class="opts"><button type="button" id="wa-yes">Sí, ahí estaré</button><button type="button" id="wa-re">Reprogramar</button></div>';
     $("wa-next").hidden=true;
     openSheet("sh-wa");
-    function answer(t){ $("wa-ans").innerHTML='<div class="me">'+t+'</div><div style="text-align:center;margin-top:14px"><span class="badge">✓ Prueba confirmada</span></div>'; var n=$("wa-next"); n.hidden=false; n.focus(); n.onclick=function(){closeSheet("sh-wa"); res();}; }
+    function answer(t){ $("wa-ans").innerHTML='<div class="me">'+t+'</div><div style="text-align:center;margin-top:14px"><span class="badge">✓ Prueba confirmada</span></div>'; var n=$("wa-next"); n.hidden=false; n.focus(); n.onclick=function(){closeSheet("sh-wa"); lastSheet=null; res();}; }
     $("wa-yes").onclick=function(){answer("Sí, ahí estaré");};
     $("wa-re").onclick=function(){answer("Reprogramar → elegí otro horario");};
   });
@@ -548,7 +555,7 @@ function screen(html, btnText){
   return new Promise(function(res){
     $("gen").innerHTML=html+'<button class="cta" id="gen-next" type="button">'+btnText+'</button>';
     openSheet("sh-gen");
-    $("gen-next").onclick=function(){closeSheet("sh-gen"); res();};
+    $("gen-next").onclick=function(){closeSheet("sh-gen"); lastSheet=null; res();};
   });
 }
 
@@ -565,10 +572,23 @@ async function run(){
     {li:1,t:"Garantía, costo de mantenimiento y que la agencia te deje manejarla antes de decidir."},
     {t:"Mi consejo: haz al menos dos pruebas de manejo antes de comprar. Se nota muchísimo en el camino."}
   ]);
-  a1.querySelector(".b").insertAdjacentHTML("beforeend",'<div class="ad"><div class="lbl"><b>Patrocinado</b><span>Tu Agencia</span></div><div class="img">'+CAR+'</div><div class="tx"><strong>Tu Agencia · SUV 2026</strong><span>Agenda tu prueba de manejo y desbloquea la promoción de este mes.</span><button class="cta pulse" type="button" id="ad1">Ver promoción</button></div></div>');
-  scroll();
-  await coach("01 · TE ENCUENTRAN EN CHATGPT","Tu anuncio, justo debajo de la respuesta","Quien le pregunta a la IA qué auto comprar ve a tu agencia en ese momento, solo en tu territorio. Toca <b>Ver promoción</b> como lo haría tu cliente.");
-  await new Promise(function(r){$("ad1").addEventListener("click",function(){this.classList.remove("pulse");r();},{once:true});});
+  await wait(700);
+  var sw=document.createElement("div"); sw.className="spotwrap";
+  sw.innerHTML='<div class="spot-tag" id="stag" hidden>Aquí aparece TU agencia</div><div class="ad spot"><div class="lbl"><b>Patrocinado</b><span>Tu Agencia</span></div><div class="img">'+CAR+'</div><div class="tx"><strong>Tu Agencia · SUV 2026</strong><span>Agenda tu prueba de manejo y desbloquea la promoción de este mes.</span><button class="cta" type="button" id="ad1">Ver promoción</button></div></div>';
+  a1.querySelector(".b").appendChild(sw);
+  sw.offsetWidth; sw.classList.add("lit"); document.body.classList.add("spotting");
+  sw.scrollIntoView({block:"center",behavior:reduce?"auto":"smooth"});
+  await wait(1300);
+  $("stag").hidden=false;
+  await wait(1500);
+  sw.insertAdjacentHTML("beforeend",'<div class="spot-note"><div class="n">01 · TE ENCUENTRAN EN CHATGPT</div><p>Quien le pregunta a la IA qué auto comprar ve a tu agencia justo debajo de la respuesta, solo en tu territorio. <b>Toca Ver promoción</b> como lo haría tu cliente.</p></div>');
+  sw.scrollIntoView({block:"center",behavior:reduce?"auto":"smooth"});
+  await wait(900);
+  $("ad1").classList.add("nudge");
+  await new Promise(function(r){$("ad1").addEventListener("click",function(){this.classList.remove("nudge");r();},{once:true});});
+  sw.classList.remove("lit"); document.body.classList.remove("spotting");
+  var ad=sw.querySelector(".ad"); ad.classList.remove("spot"); var note=sw.querySelector(".spot-note"); if(note) note.remove(); $("stag").remove();
+  $("ad1").onclick=function(){ if(lastSheet) openSheet(lastSheet); };
 
   setStep(2);
   await leadForm();
@@ -616,7 +636,7 @@ window.addEventListener("message",function(e){
     var d=typeof e.data==="string"?e.data:JSON.stringify(e.data||"");
     if(/book(ing)?[\s_:-]*(confirmed|created|complete|success)|appointment[\s_:-]*(booked|created|scheduled)/i.test(d)){ booked=true; track("schedule"); } }catch(err){}
 });
-document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ /* las pantallas avanzan con su botón */ } });
+document.addEventListener("keydown",function(e){ if(e.key==="Escape") userClose(); });
 run();
 })();
 </script>
