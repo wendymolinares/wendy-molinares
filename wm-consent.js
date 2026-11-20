@@ -15,8 +15,10 @@
    - Categorías: Necesarias (siempre), Funcionales, Analítica y Publicidad.
      Funcionales: sin permiso se bloquea la consulta de contacto de PayMeGPT
      (?contact_id=...), así ningún dato sale de la página sin aceptar.
-   - Al activar Meta u OpenAI: apaga la "coincidencia avanzada automática"
-     en su Ads Manager (la política de cookies promete que está apagada).
+   - Coincidencia avanzada de Meta/OpenAI: puede quedar activa; solo opera si
+     la persona acepta Publicidad, y la política de cookies ya lo explica.
+   - ?contact_id= se borra de la barra de direcciones al cargar, para que no
+     quede en marcadores, capturas, enlaces compartidos ni en Google Analytics.
    ===================================================================== */
 window.WM_TRACKING = window.WM_TRACKING || {
   ga4:         "G-XXXXXXXXXX",      // Google Analytics 4         → Analítica
@@ -83,6 +85,16 @@ window.WM_TRACKING = window.WM_TRACKING || {
      PayMeGPT inyecta un script que, si la URL trae ?contact_id=, consulta ese contacto.
      Sin permiso funcional, esa petición se bloquea antes de salir. */
   var GUARDED = /\/api\/landing\/context\//;
+  /* El script de PayMeGPT ya leyó la URL antes que este archivo, así que aquí se puede
+     quitar contact_id sin romper nada. Se guarda la URL original por si la persona
+     acepta las funcionales y hay que recargar con ella. */
+  var ORIGINAL_URL = location.href, HAS_CONTACT = /[?&]contact_id=/.test(location.search);
+  if (HAS_CONTACT) {
+    try {
+      var u = new URL(location.href); u.searchParams.delete("contact_id");
+      history.replaceState(history.state, "", u.pathname + (u.search ? u.search : "") + u.hash);
+    } catch (e) {}
+  }
   function functionalOK() { var c = read(); return !!(c && c.functional); }
   (function guard() {
     var X = window.XMLHttpRequest;
@@ -210,9 +222,10 @@ window.WM_TRACKING = window.WM_TRACKING || {
   function decide(functional, analytics, marketing, source) {
     var prev = read() || { functional: false, analytics: false, marketing: false };
     var next = write(functional, analytics && hasAnalytics, marketing && hasMarketing, source);
-    var gainedFun = next.functional && !prev.functional && /[?&]contact_id=/.test(location.search);
+    var gainedFun = next.functional && !prev.functional && HAS_CONTACT;
     close();
-    if (revoke(prev, next) || gainedFun) { location.reload(); return; }
+    if (gainedFun) { location.replace(ORIGINAL_URL); return; }
+    if (revoke(prev, next)) { location.reload(); return; }
     apply(next);
   }
   function sw(id, checked, enabled, label) {
@@ -288,7 +301,7 @@ window.WM_TRACKING = window.WM_TRACKING || {
       if (!tgt) return;
       ev.preventDefault(); ev.stopPropagation(); window.wmConsent.open();
     });
-    var needsAsk = anyTracker || /[?&]contact_id=/.test(location.search);
+    var needsAsk = anyTracker || HAS_CONTACT;
     var c = read();
     if (c) { apply(c); return; }
     if (!needsAsk) return;

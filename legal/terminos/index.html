@@ -30,6 +30,12 @@
 .foot button.linklike:hover{color:var(--on-dark)}
 .callout{margin:18px 0 22px;padding:20px 22px;border-radius:20px;background:#F5F5F7}
 .callout p{margin:0;max-width:none}
+.dys{--display:'OpenDyslexic','Plus Jakarta Sans',sans-serif;--body:'OpenDyslexic','Plus Jakarta Sans',sans-serif;--quote:'OpenDyslexic','Plus Jakarta Sans',sans-serif}
+.dys body{line-height:1.75}
+.dys h1,.dys h2,.dys h3,.dys .eyebrow,.dys .rules b{letter-spacing:0!important;font-style:normal!important;line-height:1.2}
+.dys .hero h1{font-size:clamp(30px,5.2vw,60px)}
+.dys .sec h2{font-size:clamp(26px,3.8vw,44px)}
+.dys .rules b{white-space:normal;font-size:22px}
 @media (max-width:640px){.legal-tbl table{min-width:0}.legal-tbl tr{grid-template-columns:minmax(0,1fr)!important;gap:4px!important}.legal-tbl td{grid-column:auto!important;color:var(--muted);font-size:14px}.legal-tbl td:first-child{color:var(--ciruela);font-size:15px}}
 
 </style>
@@ -59,6 +65,10 @@
       <button type="button" id="seg-es" aria-pressed="true">Español</button>
       <button type="button" id="seg-en" aria-pressed="false">English</button>
     </div>
+  </div>
+  <div class="opt">
+    <span id="l-dys"><span data-en="Dyslexia-friendly font">Fuente para dislexia</span><small data-en="OpenDyslexic, with wider line spacing">OpenDyslexic, con más espacio entre líneas</small></span>
+    <button type="button" class="sw" role="switch" id="sw-dys" aria-checked="false" aria-labelledby="l-dys"></button>
   </div>
   <div class="opt">
     <span id="l-calm"><span data-en="Stop animations">Detener animaciones</span><small data-en="Keep everything still for distraction-free reading">Todo quieto, para leer sin distracciones</small></span>
@@ -117,6 +127,10 @@
   });
   var saved=null;try{saved=localStorage.getItem('wm-lang');}catch(e){}
   if(saved==='en')setLang('en');
+  var swD=document.getElementById('sw-dys');
+  function setDys(on){root.classList.toggle('dys',on);swD.setAttribute('aria-checked',on);try{localStorage.setItem('wm-dys',on?'1':'0');}catch(e){}}
+  try{if(localStorage.getItem('wm-dys')==='1')setDys(true);}catch(e){}
+  swD.addEventListener('click',function(){setDys(swD.getAttribute('aria-checked')!=='true');});
   var calm=false;try{calm=localStorage.getItem('wm-calm')==='1';}catch(e){}
   var sw=document.getElementById('sw-calm');
   function setCalm(on){root.classList.toggle('calm',on);sw.setAttribute('aria-checked',on);try{localStorage.setItem('wm-calm',on?'1':'0');}catch(e){}}
