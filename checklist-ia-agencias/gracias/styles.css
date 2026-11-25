@@ -7,9 +7,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opa
 .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:22px;border-bottom:1px solid var(--hair)}
 .micro{font-size:11px;letter-spacing:.34em;text-transform:uppercase;font-weight:500;color:var(--gold)}
 .wordmark{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ivory);text-decoration:none}
-.grid{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:64px;align-items:start;margin-top:48px}
-h1{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:clamp(36px,4.6vw,56px);line-height:1.02;letter-spacing:-.03em}
-h1 .l{font-weight:300;display:block}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 440px;column-gap:72px;align-items:start;margin-top:56px}
+h1{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:clamp(32px,3.5vw,46px);line-height:1.05;letter-spacing:-.03em;max-width:15em}
+h1 .l{font-weight:300;display:block;font-size:.8em;margin-bottom:.12em}
 h1 .b{font-weight:800;display:block}
 .trazo{display:block;width:min(300px,70%);height:16px;margin-top:10px}
 .lead{margin-top:22px;font-size:17px;line-height:1.7;color:var(--ivory-dim);max-width:54ch}
