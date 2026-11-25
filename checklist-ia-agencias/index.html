@@ -369,7 +369,7 @@ if(tel&&tel.charAt(0)!=='+'){tel=(tel.length===10?'+52':'+')+tel;}
 var payload={contactName:v('nombre'),contactEmail:em,channel:'email',data:{agencia:v('agencia'),puesto:v('puesto'),ciudad:v('ciudad'),consentimiento:'si',source:'Checklist IA agencias · Sesión UCAN'}};
 if(tel)payload.contactPhone=tel;
 var done=false,go=function(){if(done)return;done=true;location.href='/checklist-ia-agencias/gracias/';};
-try{fetch("https://app.playwithmybot.com/api/webhooks/flow/10161/163d81b9b4a6fde29936523290e5dc628a06c019ef9074921b264fc5487ba504",{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).then(go,go);}catch(x){go();}
+try{fetch("https://paymegpt.com/api/webhooks/flow/10161/163d81b9b4a6fde29936523290e5dc628a06c019ef9074921b264fc5487ba504",{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).then(go,go);}catch(x){go();}
 setTimeout(go,2500);
 });
 })();
