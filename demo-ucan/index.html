@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Wendy Molinares">
+<meta name="theme-color" content="#1B171A">
+
+
+<link rel="stylesheet" href="https://wendymolinares.com/fonts/fonts.css">
+
+
+<!-- SEO Meta Tags -->
+<title>Demo AUTO-GPT 2026 · Wendy Molinares</title>
+<meta name="description" content="Demostración de los tres productos AUTO-GPT 2026 para agencias de autos." />
+<meta property="og:title" content="Demo AUTO-GPT 2026 · Wendy Molinares" />
+<meta property="og:description" content="Demostración de los tres productos AUTO-GPT 2026 para agencias de autos." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Demo AUTO-GPT 2026 · Wendy Molinares" />
+<meta name="twitter:description" content="Demostración de los tres productos AUTO-GPT 2026 para agencias de autos." />
+<!-- End SEO Meta Tags -->
+<script data-lp-token-hydrate>
+(function(){try{
+  var slug="lp-mwvz7sf3-stxlb";
+  var SITEK="";
+  var SK='lp_access_'+slug;
+  var map={access_token:'lp_pw_',allowlist_access_token:'lp_al_',pin_access_token:'lp_pin_',paywall_access_token:'lp_paid_'};
+  function siteTok(){try{return SITEK?localStorage.getItem(SITEK):null;}catch(e){return null;}}
+  var u=new URL(location.href);var found=null;var changed=false;
+  var PINP=true;
+  if(!PINP){try{localStorage.removeItem('lp_pin_'+slug);if(SITEK)localStorage.removeItem(SITEK);}catch(e){}}
+  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{if(PINP||p!=='pin_access_token'){localStorage.setItem(map[p]+slug,v);if(SITEK&&p==='pin_access_token')localStorage.setItem(SITEK,v);}}catch(e){}if(p==='pin_access_token'){try{sessionStorage.setItem('lp_fresh_'+slug,'1');}catch(e){}}u.searchParams.delete(p);changed=true;}});
+  if(found){try{sessionStorage.setItem(SK,found);}catch(e){}}
+  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
+  if(changed){try{history.replaceState(null,'',u.toString());}catch(e){}}
+  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();}catch(e){return null;}}
+  function needsToken(url,method){if(!url)return false;var s=String(url);var m=(method||'GET').toUpperCase();var isSheetWrite=(m==='POST'||m==='PATCH'||m==='PUT'||m==='DELETE')&&/\/sheet-rows(\/|$|\?)/.test(s);var isSheetRead=/\/sheet-data(\/|$|\?)/.test(s);var isLlm=/\/api\/landing-pages\/public\/[^/]+\/(llm|llm-config)(\/|$|\?)/.test(s);return isSheetWrite||isSheetRead||isLlm;}
+  if(window.fetch){var _f=window.fetch;window.fetch=function(input,init){try{var url=typeof input==='string'?input:(input&&input.url)||'';var method=(init&&init.method)||(input&&input.method)||'GET';if(needsToken(url,method)){var tok=getTok();if(tok){init=init||{};var h=new Headers(init.headers||(typeof input!=='string'?input.headers:undefined)||{});if(!h.has('X-Landing-Page-Token'))h.set('X-Landing-Page-Token',tok);init.headers=h;}}}catch(e){}return _f.call(this,input,init);};}
+  if(window.XMLHttpRequest){var _o=XMLHttpRequest.prototype.open;var _s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u){this.__lpM=m;this.__lpU=u;return _o.apply(this,arguments);};XMLHttpRequest.prototype.send=function(){try{if(needsToken(this.__lpU,this.__lpM)){var tok=getTok();if(tok)this.setRequestHeader('X-Landing-Page-Token',tok);}}catch(e){}return _s.apply(this,arguments);};}
+}catch(e){}})();
+</script>
+
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://paymegpt.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=9784');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='CC56zL';
+  var apiBase='https://paymegpt.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    var phone=findPhone();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    var __pLoc=(document.documentElement.lang||navigator.language||'en');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,phone:phone||'',amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,locale:__pLoc,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var sidP=urlParams.get('session_id');
+      if(sidP){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidP})}).catch(function(){});}catch(e){}}
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||('Thank you for purchasing '+pName+'.');
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;background:color-mix(in srgb,'+successBtnColor+' 12%,white);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="'+successBtnColor+'" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-pay-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var pBtn=document.getElementById('lp-pay-success-btn');
+      if(pBtn){pBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>
+<script data-cart>
+(function(){
+  var slug='CC56zL';
+  var apiBase='https://paymegpt.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findCartEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realCart=function(arg){
+    var items, email='', customerName='', successUrl, cancelUrl, currency;
+    if(Array.isArray(arg)){items=arg;}
+    else if(arg&&typeof arg==='object'){
+      items=arg.items;email=arg.email||'';customerName=arg.name||arg.customerName||'';
+      successUrl=arg.successUrl;cancelUrl=arg.cancelUrl;currency=arg.currency;
+    }
+    if(!Array.isArray(items)||items.length===0){alert('No items in cart.');return Promise.reject('no_items');}
+    var cleanItems=[];var totalCents=0;
+    for(var i=0;i<items.length;i++){
+      var it=items[i];if(!it||typeof it!=='object'){alert('Invalid item at position '+i);return Promise.reject('bad_item');}
+      var nm=typeof it.name==='string'?it.name.trim():'';
+      if(!nm){alert('Item '+(i+1)+' is missing a name.');return Promise.reject('no_name');}
+      var amt=typeof it.amountCents==='number'?it.amountCents:(typeof it.amount==='number'?Math.round(it.amount*100):NaN);
+      if(!isFinite(amt)||amt<1){alert('Item "'+nm+'" needs a valid amount in cents.');return Promise.reject('bad_amount');}
+      var qty=(typeof it.quantity==='number'&&it.quantity>0)?Math.floor(it.quantity):1;
+      cleanItems.push({name:nm,description:it.description||'',amountCents:amt,quantity:qty});
+      totalCents+=amt*qty;
+    }
+    if(totalCents<50){alert('Cart total must be at least $0.50');return Promise.reject('total_too_low');}
+    if(!email)email=findCartEmail();
+    if(!customerName)customerName=findCartName();
+    var cartPhone=findCartPhone();
+    if(!email){var p=window.prompt('Enter your email for the receipt:','');if(p&&p.indexOf('@')>-1){email=p.trim();}else{alert('An email address is required to complete checkout.');return Promise.reject('no_email');}}
+    var successBase=window.location.href.split('?')[0];
+    var body={email:email,name:customerName,items:cleanItems,locale:(document.documentElement.lang||navigator.language||'en')};
+    if(currency)body.currency=currency;
+    if(cartPhone)body.phone=cartPhone;
+    body.successUrl=successUrl||(successBase+'?cart=success&email='+encodeURIComponent(email)+'&session_id={CHECKOUT_SESSION_ID}');
+    body.cancelUrl=cancelUrl||(successBase+'?cart=cancelled');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/cart/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(body)
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process checkout');throw new Error(d.error);}
+    });
+  };
+  try{Object.defineProperty(window,'__processCart',{value:__realCart,writable:false,configurable:false});}catch(e){window.__processCart=__realCart;}
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('cart')==='success'){
+      var sidC=urlParams.get('session_id');
+      if(sidC){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidC})}).catch(function(){});}catch(e){}}
+      if(document.getElementById('payment-success-overlay')||document.getElementById('donation-success-overlay')||document.getElementById('cart-success-overlay'))return;
+      var overlay=document.createElement('div');overlay.id='cart-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||'Thank you for your order.';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;background:color-mix(in srgb,'+successBtnColor+' 12%,white);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="'+successBtnColor+'" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Order Confirmed!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-cart-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var cBtn=document.getElementById('lp-cart-success-btn');
+      if(cBtn){cBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+<header class="top">
+<div class="wm">AUTO-GPT 2026 <span>·</span> Wendy Molinares</div>
+<nav class="tabs" id="tabs" aria-label="Productos"></nav>
+<span class="chip">Simulación</span>
+</header>
+<main class="main">
+<section class="cap" id="cap" aria-live="polite"></section>
+<section class="stage" id="stage"></section>
+</main>
+<footer class="foot">
+<span>Simulación con fines demostrativos. Agencia, autos, promociones y cifras de ejemplo. ChatGPT es marca de OpenAI; esta demostración no está afiliada a OpenAI.</span>
+<div class="ctrl"><kbd>← → o espacio</kbd><button type="button" id="prev">Anterior</button><button type="button" class="nx" id="next">Siguiente</button></div>
+</footer>
+</div>
+<script>
+(function(){
+var CAR='<svg viewBox="0 0 620 260" aria-hidden="true"><path d="M40 186 L40 128 Q40 108 62 104 L120 98 L176 40 Q187 28 206 28 L440 28 Q462 28 474 44 L516 100 L552 108 Q576 114 576 138 L576 186 Z" fill="#F6EFE3"/><path d="M196 44 L284 44 L284 94 L142 94 Z" fill="#1B171A" opacity=".9"/><path d="M298 44 L428 44 Q441 44 449 55 L480 94 L298 94 Z" fill="#1B171A" opacity=".9"/><circle cx="160" cy="190" r="42" fill="#1B171A"/><circle cx="160" cy="190" r="20" fill="#C9992E"/><circle cx="460" cy="190" r="42" fill="#1B171A"/><circle cx="460" cy="190" r="20" fill="#C9992E"/></svg>';
+function win(url,lbl,inner){return '<div class="win in"><div class="bar"><div class="dd"><i></i><i></i><i></i></div><div class="url">'+url+'</div>'+(lbl?'<span class="lbl">'+lbl+'</span>':'')+'</div><div class="body">'+inner+'</div></div>';}
+function asis(inner){return win('Asistente de IA','Simulación',inner);}
+function q(t,d){return '<div class="q in '+(d||'')+'">'+t+'</div>';}
+function a(t,d,src){return '<div class="a in '+(d||'')+'"><div class="av">IA</div><div class="tx">'+t+(src?src:'')+'</div></div>';}
+function phone(name,sub,hr,msgs){return '<div class="phone in"><div class="hd"><div class="av">TA</div><div>'+name+'<small>'+sub+'</small></div><span class="hr">'+hr+'</span></div><div class="ms">'+msgs+'</div></div>';}
+function m(cls,t,h,d){return '<div class="m '+cls+' in '+(d||'')+'">'+t+(h?'<small>'+h+'</small>':'')+'</div>';}
+function cap(k,l,b,t,nota){return '<p class="k">'+k+'</p><h1><span class="l">'+l+'</span> <span class="b">'+b+'</span></h1><p class="t">'+t+'</p>'+(nota?'<p class="nota">'+nota+'</p>':'');}
+
+var CH=[
+{tab:'ChatGPT Ads + Motor de Citas',steps:[
+{cap:cap('01 · ChatGPT Ads','Tu cliente le pregunta a la IA.','Tu agencia aparece ahí mismo.','Justo debajo de la respuesta, solo en tu territorio, con <strong>la promoción vigente de tu agencia</strong>.','*Solo si el manual y los lineamientos de tu marca lo permiten. Si no, la pauta va a Meta local.'),
+ stage:asis(q('¿Qué SUV familiar me recomiendas en Tijuana por menos de 600 mil pesos?')+a('Para una familia en ese presupuesto conviene fijarte en tres cosas:<ul><li>Espacio real: tercera fila o cajuela amplia.</li><li>Rendimiento de combustible y, si te late, versión híbrida.</li><li>Garantía, mantenimiento y una prueba de manejo antes de decidir.</li></ul>','d1')+'<div class="ad in d3 glow"><span class="pat">Patrocinado</span><div class="ph">'+CAR+'</div><div><strong>Tu Agencia · SUV 2026</strong><span>Agenda tu prueba de manejo y aparta la promoción de este mes.</span><span class="btn">Ver promoción</span></div></div>')},
+{cap:cap('01 · Motor de Citas','Deja sus datos','a cambio de la promoción.','Landing de tu agencia, con <strong>aviso de privacidad y consentimiento</strong>. El contacto queda en tu sistema, no en el celular de nadie.'),
+ stage:win('🔒 tuagencia.mx/promocion','','<div class="land"><div class="in"><h3>Tu SUV 2026, con beneficio de este mes</h3><p>Aparta tu promoción y elige tu prueba de manejo en el siguiente paso.</p><p style="margin-top:14px"><span class="tag">Llegó por: ChatGPT Ads</span></p></div><div class="form in d1"><div class="fld">Nombre</div><div class="inp">Laura Gómez</div><div class="fld">WhatsApp</div><div class="inp">+52 664 *** ** 18</div><div class="fld">Correo</div><div class="inp">laura.g@correo.com</div><div class="ok in d2"><span class="bx">✓</span><span>Acepto que Tu Agencia use mis datos para darme seguimiento, según su aviso de privacidad.</span></div><span class="btn in d3">Apartar promoción</span></div></div>')},
+{cap:cap('01 · 11:48 de la noche','Tu asesor descansa.','Tu agencia sigue atendiendo.','Responde en segundos, <strong>se presenta como IA</strong>, usa la información oficial de tu agencia y deja la prueba de manejo en la agenda del asesor.'),
+ stage:phone('Tu Agencia','Asistente de IA · WhatsApp','11:48 pm',m('yo','¿Tienen la versión híbrida? ¿La puedo probar el sábado?','11:48 pm')+m('ia','Hola, Laura. Soy el asistente de IA de Tu Agencia. Sí tenemos la SUV 2026 híbrida. El sábado hay prueba de manejo a las 11:00 am o a la 1:00 pm. ¿Cuál te aparto?','11:48 pm','d1')+m('yo','11 está perfecto','11:49 pm','d2')+m('ia','Listo: sábado 11:00 am con Carlos, tu asesor. Te mando un recordatorio un día antes. Si prefieres hablar con una persona, escribe «asesor».','11:49 pm','d3')+m('sys','✓ Prueba de manejo agendada','','d4'))},
+{cap:cap('01 · A la mañana siguiente','Tu asesor llega preparado.','Y tú sabes qué anuncio la trajo.','La cita, la conversación completa y el origen del cliente, en el sistema de la agencia. Un día antes sale el recordatorio por WhatsApp.'),
+ stage:win('🔒 Tu Agencia · Agenda de Carlos','','<div class="cards"><div class="cardx in"><div class="h"><strong>Sábado 11:00 am · Laura Gómez</strong><span class="tag t">Confirmada</span></div><p>SUV 2026 híbrida · Familia, presupuesto menor a 600 mil · Quiere comparar con la versión gasolina.</p></div><div class="cardx in d1"><div class="h"><strong>Origen</strong><span class="tag g">ChatGPT Ads · campaña SUV noviembre</span></div><p>Conversación completa guardada en la agencia. Agendó a las 11:49 pm.</p></div><div class="cardx in d2"><div class="h"><strong>Viernes 10:00 am · Recordatorio</strong><span class="tag">Programado</span></div><p>«Hola Laura, te esperamos mañana a las 11:00 am para tu prueba de manejo. ¿Confirmas?»</p></div><div class="cardx in d3"><div class="h"><strong>Reporte mensual</strong><span class="tag">Para dirección</span></div><p>Cuánto costó cada prueba de manejo y qué anuncio la trajo, para invertir donde sí vende.</p></div></div>')}
+]},
+{tab:'Visibilidad en la IA',steps:[
+{cap:cap('02 · Hoy','La IA responde','con lo que encuentra.','Si tu agencia no tiene su información publicada y con fecha, la IA toma la que encuentre, aunque sea de otro año o de otro país.'),
+ stage:asis(q('¿Qué promoción tiene Tu Agencia en la SUV 2026?')+a('Encontré un bono de $50,000 para la SUV en un sitio publicado en 2025, de otro país. No pude confirmar una promoción vigente de Tu Agencia en Tijuana. Te recomiendo confirmarlo directamente con la agencia.','d1','<br><span class="src bad">Fuente: sitio externo · 2025</span>'))},
+{cap:cap('02 · Lo que construimos','Tu información oficial,','escrita para que la IA la lea.','Modelos, versiones, promociones con vigencia, sucursales y horarios. <strong>Fechado y actualizado cada mes</strong>, siempre enlazando a tus sitios oficiales para cotizar y agendar.'),
+ stage:win('🔒 ia.tuagencia.mx','Para la IA','<div class="facts"><div class="fact in"><div class="k">Promoción vigente</div><p>SUV 2026: tasa 0% a 24 meses en versiones seleccionadas.</p><small>Vigente al 31 de diciembre · actualizado el 25 de noviembre</small></div><div class="fact in d1"><div class="k">Versiones</div><p>Gasolina y híbrida, 5 y 7 pasajeros.</p><small>Fuente: sitio oficial de Tu Agencia</small></div><div class="fact in d2"><div class="k">Sucursales</div><p>Tijuana Centro y Tijuana Otay.</p><small>Horarios y teléfonos oficiales</small></div><div class="fact in d3"><div class="k">Agenda tu prueba</div><p>Enlace a la página oficial de la agencia.</p><small>Siempre dirige a tus sitios para comprar o agendar</small></div></div>')},
+{cap:cap('02 · Después','Ahora la IA','tiene de dónde leer.','La misma pregunta, con tu información oficial disponible.','Las señales suelen verse en 1 a 2 meses y se estabilizan en 3 a 6. Nadie puede garantizar que la IA te mencione: lo que sí controlas es qué información encuentra.'),
+ stage:asis(q('¿Qué promoción tiene Tu Agencia en la SUV 2026?')+a('Según el sitio oficial de Tu Agencia, actualizado el 25 de noviembre, la SUV 2026 tiene tasa 0% a 24 meses en versiones seleccionadas, vigente al 31 de diciembre. Hay versión gasolina e híbrida. Puedes agendar tu prueba de manejo en su página oficial.','d1','<br><span class="src">Fuente: ia.tuagencia.mx · actualizado 25 nov</span>'))}
+]},
+{tab:'Asesores Potenciados',steps:[
+{cap:cap('03 · Bandeja del asesor','La IA propone.','Tu asesor decide.','Sus mensajes de WhatsApp, Instagram y Facebook en un solo lugar, con tu marca. La IA sugiere respuestas <strong>con tus promociones vigentes y tus reglas</strong>; el asesor revisa y envía.'),
+ stage:win('🔒 asesores.tuagencia.mx · Carlos','','<div class="inbox"><div class="list"><div class="it sel"><span class="ch">Instagram</span><b>Jorge Ruiz</b><span>¿Cuánto queda la mensualidad de la pickup?</span></div><div class="it"><span class="ch">WhatsApp</span><b>Laura Gómez</b><span>Prueba de manejo sábado 11:00</span></div><div class="it"><span class="ch">Facebook</span><b>Mariana López</b><span>¿Reciben mi auto a cuenta?</span></div></div><div class="conv">'+m('ia','¿Cuánto queda la mensualidad de la pickup? Quiero dar 100 mil de enganche.','9:12 am')+'<div class="sug in d1"><div class="k">Sugerencia de la IA · revisa antes de enviar</div>Hola, Jorge. Con 100 mil de enganche te preparo una cotización exacta con la tasa vigente de este mes. ¿La buscas para trabajo o para uso familiar? Así te recomiendo la versión correcta.<div class="acts"><span>Editar</span><span class="send">Enviar</span></div></div>'+m('yo','Hola, Jorge. Con 100 mil de enganche te preparo una cotización exacta con la tasa vigente de este mes. ¿La buscas para trabajo o para uso familiar?','9:13 am · Carlos','d3')+'</div></div>')},
+{cap:cap('03 · Seguimiento','Nadie se queda','sin respuesta.','Cada mañana, el asesor ve a quién le toca seguimiento y por qué. Tú ves lo mismo desde dirección.'),
+ stage:win('🔒 asesores.tuagencia.mx · Hoy','','<table class="tbl in"><tr><th>Cliente</th><th>Qué pasó</th><th>Siguiente paso</th></tr><tr class="in d1"><td>Jorge Ruiz</td><td>Pidió cotización hace 2 días</td><td><span class="tag">Enviar cotización</span></td></tr><tr class="in d2"><td>Mariana López</td><td>Preguntó por auto a cuenta</td><td><span class="tag">Agendar avalúo</span></td></tr><tr class="in d3"><td>Laura Gómez</td><td>Prueba de manejo mañana</td><td><span class="tag t">Recordatorio programado</span></td></tr></table>')},
+{cap:cap('03 · Cuando un asesor se va','La información','se queda en casa.','Las conversaciones, los contactos y el historial son de la agencia. Se reasignan en un clic y el acceso del asesor se cierra.'),
+ stage:win('🔒 asesores.tuagencia.mx · Dirección','','<div class="cards"><div class="cardx in"><div class="h"><strong>Carlos Méndez dejó la agencia</strong><span class="tag">Acceso desactivado</span></div><p>46 conversaciones activas y su historial completo siguen en la agencia.</p></div><div class="cardx in d1"><div class="h"><strong>Reasignadas a Ana Torres</strong><span class="tag t">Listo</span></div><p>Ana ve cada conversación desde el primer mensaje: qué preguntó el cliente, qué se le cotizó y qué sigue.</p></div><div class="cardx in d2"><div class="h"><strong>Para el cliente, nada cambia</strong><span class="tag g">Mismo número de la agencia</span></div><p>Le sigue escribiendo a Tu Agencia, no al celular personal de alguien que ya no está.</p></div></div>')}
+]},
+{tab:'Cierre',steps:[
+{cap:'',stage:'<div class="fin"><p class="q2 in">Todo esto, bajo tus reglas y en tu casa.</p><div class="tres"><div class="in d1"><b>01</b><p>Te encuentran donde ya están preguntando.</p></div><div class="in d2"><b>02</b><p>La IA lee tu información oficial, no la de otros.</p></div><div class="in d3"><b>03</b><p>Tus asesores atienden mejor y la información se queda.</p></div></div><p class="url in d4">Pruébalo como cliente: <b>wendymolinares.com/motor-de-citas</b></p></div>'}
+]}
+];
+var ci=0,si=0;
+var tabs=document.getElementById('tabs');
+CH.forEach(function(c,i){var b=document.createElement('button');b.type='button';b.className='tab';b.innerHTML=(i<3?'<b>0'+(i+1)+'</b>':'')+c.tab;b.onclick=function(){go(i,0);};tabs.appendChild(b);});
+function render(){
+  var c=CH[ci],s=c.steps[si];
+  [].forEach.call(tabs.children,function(b,i){b.classList.toggle('on',i===ci);});
+  var dots='';if(c.steps.length>1){dots='<div class="dots">';for(var k=0;k<c.steps.length;k++)dots+='<i class="'+(k<=si?'on':'')+'"></i>';dots+='</div>';}
+  document.getElementById('cap').innerHTML=s.cap?s.cap+dots:'';
+  var st=document.getElementById('stage');st.innerHTML=s.stage;
+  document.getElementById('prev').disabled=(ci===0&&si===0);
+  try{history.replaceState(null,'','#'+(ci+1)+'-'+(si+1));}catch(e){}
+}
+function go(c,s){ci=c;si=s;render();}
+function next(){var c=CH[ci];if(si<c.steps.length-1)si++;else if(ci<CH.length-1){ci++;si=0;}render();}
+function prev(){if(si>0)si--;else if(ci>0){ci--;si=CH[ci].steps.length-1;}render();}
+document.getElementById('next').onclick=next;document.getElementById('prev').onclick=prev;
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();next();}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}else if(/^[1-4]$/.test(e.key)){go(+e.key-1,0);}});
+var h=(location.hash||'').match(/^#(\d)-(\d)$/);if(h){var c=+h[1]-1,s=+h[2]-1;if(CH[c]&&CH[c].steps[s]){ci=c;si=s;}}
+render();
+})();
+</script>
+</body>
+</html>
