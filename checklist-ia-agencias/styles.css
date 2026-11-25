@@ -14,8 +14,11 @@ h1 .b{font-weight:800;display:block}
 .trazo{display:block;width:min(300px,70%);height:16px;margin-top:10px}
 .lead{margin-top:22px;font-size:17px;line-height:1.7;color:var(--ivory-dim);max-width:54ch}
 .lead strong{color:var(--ivory);font-weight:500}
-.pts{list-style:none;margin-top:30px;border-top:1px solid var(--hair)}
-.pts li{display:grid;grid-template-columns:36px 1fr;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--hair);font-size:16px;line-height:1.5;color:var(--ivory)}
+.kicker{font-size:11px;letter-spacing:.34em;text-transform:uppercase;font-weight:500;color:var(--ivory-faint);margin-bottom:18px}
+.lab{margin-top:30px;font-size:11px;letter-spacing:.34em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+.pts{list-style:none;margin-top:12px;border-top:1px solid var(--hair)}
+.pts li{display:grid;grid-template-columns:28px 1fr;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--hair);font-size:15.5px;line-height:1.55;color:var(--ivory-dim)}
+.pts li strong{color:var(--ivory);font-weight:500}
 .pts b{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:18px;color:var(--gold)}
 .note{margin-top:16px;font-size:14px;line-height:1.6;color:var(--ivory-faint);max-width:54ch}
 .card{background:var(--ivory);color:var(--ink);border-radius:4px;padding:28px 26px}
